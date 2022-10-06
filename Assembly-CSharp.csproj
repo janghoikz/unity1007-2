@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{4EEFECAB-6E5D-29D3-22A1-945606F0076F}</ProjectGuid>
+    <ProjectGuid>{15227D15-1058-E6D6-EAD9-6D802C95AD5A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -57,12 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\script\PlayerController.cs" />
-    <Compile Include="Assets\script\Define\Define.cs" />
     <Compile Include="Assets\script\Manager\Managers.cs" />
-    <Compile Include="Assets\script\Manager\InputManager.cs" />
-    <Compile Include="Assets\script\CameraController.cs" />
-    <Compile Include="Assets\script\Inven\Inven.cs" />
     <Compile Include="Assets\script\Inven\Slotdata.cs" />
+    <Compile Include="Assets\script\Define\Define.cs" />
+    <Compile Include="Assets\script\Inven\Inven.cs" />
+    <Compile Include="Assets\script\CameraController.cs" />
+    <Compile Include="Assets\script\Manager\InputManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
