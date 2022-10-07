@@ -1,14 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
 	[SerializeField]
 	float _speed = 10.0f;
 
+	[SerializeField]
+	AnimationClip move;
+	[SerializeField]
+	AnimationClip wait;
+
 	bool _moveToDest = false;
 	Vector3 _destPos;
+	NavMeshAgent agent;
+	Animation anim;
 
 	void Start()
 	{
@@ -16,6 +24,8 @@ public class PlayerController : MonoBehaviour
 		Managers.Input.KeyAction += OnKeyboard;
 		Managers.Input.MouseAction -= OnMouseClicked;
 		Managers.Input.MouseAction += OnMouseClicked;
+		anim = GetComponent<Animation>();
+		agent = GetComponent<NavMeshAgent>();
 	}
 
 	void Update()
@@ -23,15 +33,26 @@ public class PlayerController : MonoBehaviour
 		if (_moveToDest)
 		{
 			Vector3 dir = _destPos - transform.position;
-			if (dir.magnitude < 0.0001f)
+			if (dir.magnitude < 0.1f)
 			{
 				_moveToDest = false;
+				anim.clip = wait;
+				anim.Play();
 			}
 			else
 			{
-				float moveDist = Mathf.Clamp(_speed * Time.deltaTime, 0, dir.magnitude);
-				transform.position += dir.normalized * moveDist;
-				transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
+                agent.SetDestination(_destPos);
+                //float moveDist = Mathf.Clamp(_speed * Time.deltaTime, 0, dir.magnitude);
+                //transform.position += dir.normalized * moveDist;
+                //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
+                anim.clip = move;
+				anim.Play();
+				if (dir.magnitude < 0.0001f)
+				{
+					_moveToDest = false;
+					anim.clip = wait;
+					anim.Play();
+				}
 			}
 		}
 	}

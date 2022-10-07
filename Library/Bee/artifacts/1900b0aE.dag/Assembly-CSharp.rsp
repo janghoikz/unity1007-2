@@ -357,7 +357,12 @@
 "Assets/script/Inven/Slotdata.cs"
 "Assets/script/Manager/InputManager.cs"
 "Assets/script/Manager/Managers.cs"
+"Assets/script/Monster/BearController.cs"
+"Assets/script/Monster/MonsterBase.cs"
+"Assets/script/Monster/WolfController.cs"
 "Assets/script/PlayerController.cs"
+"Assets/script/Stat/PlayerStat.cs"
+"Assets/script/Stat/Stat.cs"
 -langversion:9.0
 
 /deterministic

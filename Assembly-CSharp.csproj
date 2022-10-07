@@ -59,10 +59,15 @@
     <Compile Include="Assets\script\PlayerController.cs" />
     <Compile Include="Assets\script\Manager\Managers.cs" />
     <Compile Include="Assets\script\Inven\Slotdata.cs" />
+    <Compile Include="Assets\script\Monster\MonsterBase.cs" />
+    <Compile Include="Assets\script\Monster\WolfController.cs" />
+    <Compile Include="Assets\script\Monster\BearController.cs" />
     <Compile Include="Assets\script\Define\Define.cs" />
     <Compile Include="Assets\script\Inven\Inven.cs" />
     <Compile Include="Assets\script\CameraController.cs" />
     <Compile Include="Assets\script\Manager\InputManager.cs" />
+    <Compile Include="Assets\script\Stat\Stat.cs" />
+    <Compile Include="Assets\script\Stat\PlayerStat.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
